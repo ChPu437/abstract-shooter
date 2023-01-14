@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="资源文件\font">
+      <UniqueIdentifier>{6cc61dd5-62b4-4aa2-96ee-d72804ad7059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\texture">
+      <UniqueIdentifier>{996e6ff1-3f49-4167-8108-bd45a9f3a887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\sound">
+      <UniqueIdentifier>{2e1f3a6c-c2df-4030-affd-eecf29e0fb69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Libraries\utilities">
+      <UniqueIdentifier>{1e97ab7c-43ce-466a-946a-a48aedc1f03f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\utilities\SDL_FontCache">
+      <UniqueIdentifier>{0f0c65bf-9a8e-45ca-b477-e3d7bcb295fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\object">
+      <UniqueIdentifier>{663ce78c-32f4-4db0-aa79-628c4e76d69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\view">
+      <UniqueIdentifier>{31225afa-80e7-4f94-b8dc-13715f46788d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\object\character">
+      <UniqueIdentifier>{8992263c-bdc9-4343-9a74-8aef7afd33e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\win-sdl\SDL_FontCache\SDL_FontCache.c">
+      <Filter>Libraries\utilities\SDL_FontCache</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\win-sdl\SDL_FontCache\SDL_FontCache.h">
+      <Filter>Libraries\utilities\SDL_FontCache</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\game.hpp">
+      <Filter>Libraries\view</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\scene.hpp">
+      <Filter>Libraries\view</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\scoreboard.hpp">
+      <Filter>Libraries\view</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\title.hpp">
+      <Filter>Libraries\view</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\object.hpp">
+      <Filter>Libraries\object</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\collision.hpp">
+      <Filter>Libraries\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\enums.hpp">
+      <Filter>Libraries\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\fps_lim.hpp">
+      <Filter>Libraries\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\texture.hpp">
+      <Filter>Libraries\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\timer.hpp">
+      <Filter>Libraries\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\character.hpp">
+      <Filter>Libraries\object\character</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\bullet.hpp">
+      <Filter>Libraries\object</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\enemy.hpp">
+      <Filter>Libraries\object\character</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\player.hpp">
+      <Filter>Libraries\object\character</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
