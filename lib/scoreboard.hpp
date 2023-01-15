@@ -9,7 +9,7 @@ class Scoreboard {
 public:
 	Scoreboard(const int& a, const int& b, const int& c, const unsigned long long& d)
 		: pLife(a), pBomb(b), pGraze(c), pScore(d) {
-		font = FC_CreateFont(); // TODO: font复用，与fps计数器
+		font = FC_CreateFont(); // 大小不一样复用空间不大~~ TODO: font复用~~
 		FC_LoadFont(font, gRenderer, "assets/font/jetbrains_mono.ttf", 30, SDL_Color{0, 0, 0, 255}, TTF_STYLE_BOLD);
 		if (font == nullptr) throw;
 	}
@@ -46,5 +46,5 @@ private:
 	static const SDL_Rect scoreView;
 };
 
-const SDL_Rect Scoreboard::scoreView = {900, 100, 280, 300};
+const SDL_Rect Scoreboard::scoreView = {900, 100, 380, 300};
 

@@ -1,4 +1,17 @@
-﻿#include <iostream>
+﻿/*
+TODO:
+游戏流程控制
+移动及射击控制->更合理的封装
+游戏背景及Scene背景
+更合理的FPS计算及控制
+主界面、暂停界面、结算界面、失败界面
+boss血条
+自机/boss出场动画及死亡动画（霸体时间、决死时间、粒子特效）
+音效、BGM
+最终的二进制打包
+存档
+*/
+#include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
@@ -15,6 +28,7 @@ void W_Quit();
 
 SDL_Window* gWindow = nullptr;
 SDL_Renderer* gRenderer = nullptr;
+FC_Font* fontJetbrainsMono;
 
 int main(int argc, char* argv[]) {
 
@@ -28,12 +42,23 @@ int main(int argc, char* argv[]) {
 	FpsCapper fpsCapper;
 	FpsTimer fpsTimer;
 
-	Game::Init();
+	Title* title = nullptr;
+	Game* game = nullptr;
 
 	fpsCapper.setTargetFps(60);
 	fpsTimer.start();
 
+	game = new Game();
+
 	while (!quit) {
+		/*if (inGame && game == nullptr) {
+			if (title != nullptr) delete title;
+			game = new Game(inGame);
+		}
+		if (!inGame && title == nullptr) {
+			if (game != nullptr) delete game;
+			title = new Title(inGame);
+		}*/
 		fpsCapper.start();
 		while (SDL_PollEvent(&e)) {
 			switch (e.type) {
@@ -42,13 +67,12 @@ int main(int argc, char* argv[]) {
 				break;
 			}
 
-			switch(Game::IsInGame()){
+			switch(game != nullptr){
 			case true:
-				Game::HandleEvent(e);
+				game->handleEvent(e);
 				break;
 			case false:
-				quit = true; // for testing
-				// Title::HandelEvent(e);
+				title->handleEvent(e);
 				break;
 			}
 		}
@@ -57,12 +81,14 @@ int main(int argc, char* argv[]) {
 
 		fpsTimer.render();
 
-		switch (Game::IsInGame()) {
+		switch (game != nullptr) {
 		case true:
-			Game::Update();
-			Game::Render();
+			game->update();
+			game->render();
 			break;
 		case false:
+			title->update();
+			title->render();
 			break;
 		}
 
@@ -72,7 +98,8 @@ int main(int argc, char* argv[]) {
 		fpsCapper.cap();
 	}
 
-	Game::Quit();
+	if (title != nullptr) delete title;
+	if (game != nullptr) delete game;
 	W_Quit();
 
 	return 0;

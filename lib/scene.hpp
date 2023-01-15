@@ -20,7 +20,8 @@ public:
 	void update();
 	void addEnemy();
 	void togglePlayerMove(const Direction&, const bool&);
-	void togglePlayerShoot();
+	void togglePlayerAttack();
+	void togglePlayerSlow() { player->toggleSlow(); }
 private:
 	Direction BorderDetectX(const Object*);
 	Direction BorderDetectY(const Object*);
@@ -83,21 +84,12 @@ void Scene::render() {
 }
 void Scene::update() {
 	// if (gPaused = true) return;
-
-	player->move();
+	player->update(blt);
 	for (auto i : enemy) {
 		i->update(player, blt);
 	}
 	for (auto i : blt) {
 		i->update(player);
-	}
-	// Shooting, Some use bot animation
-	if (isPShooting) {
-		timerPBullet++;
-		if (timerPBullet == 5) {
-			blt.push_back(new BulletDefault(player->getPower() / 10, player->getPosX() + 13, player->getPosY() - 20));
-			timerPBullet = 0;
-		}
 	}
 	// Events 
 	// // Collision
@@ -157,30 +149,10 @@ void Scene::update() {
 	}
 }
 void Scene::togglePlayerMove(const Direction& dire, const bool& moving) {
-	switch (dire) {
-	case D_UP:
-		if (moving) player->setSpeedY(0);
-		else player->setSpeedY(-1 * player->getSpeed());
-		break;
-	case D_DOWN:
-		if (moving) player->setSpeedY(0);
-		else player->setSpeedY(player->getSpeed());
-		break;
-	case D_LEFT: 
-		if (moving) player->setSpeedX(0);
-		else player->setSpeedX(-1 * player->getSpeed());
-		break;
-	case D_RIGHT: 
-		if (moving) player->setSpeedX(0);
-		else player->setSpeedX(player->getSpeed());
-		break;
-	}
+	player->toggleMove(dire, moving);
 }
-void Scene::togglePlayerShoot() {
-	switch (isPShooting) {
-	case true: isPShooting = false; break;
-	case false: isPShooting = true, timerPBullet = 0; break;
-	}
+void Scene::togglePlayerAttack() {
+	player->toggleAttack();
 }
 Direction Scene::BorderDetectX(const Object* obj) {
 	if (obj->getPosX() <= 0) {

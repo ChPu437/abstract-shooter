@@ -6,19 +6,18 @@
 
 typedef unsigned int uint;
 
-extern SDL_Window* gWindow;
 extern SDL_Renderer* gRenderer;
 
 class Texture {
 public:
 	Texture(const int& = 0, const int& = 0);
-	~Texture();
+	virtual ~Texture();
 	void free();
 	bool loadFromFile(const std::string&, const int& = 0, const int& = 0);
 	void render(const int&, const int&, const SDL_Rect* = nullptr, const double& = 0.0, const SDL_Point* = nullptr, const SDL_RendererFlip& = SDL_FLIP_NONE);
 	int getWidth() const;
 	int getHeight() const;
-private:
+protected:
 	SDL_Texture* texture;
 	int width, height;
 };

@@ -33,6 +33,18 @@
     <Filter Include="Libraries\object\character">
       <UniqueIdentifier>{8992263c-bdc9-4343-9a74-8aef7afd33e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Libraries\view\game">
+      <UniqueIdentifier>{c7728f09-39a0-41e6-9bea-2ebde08cb890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries\view\title">
+      <UniqueIdentifier>{27fe7e71-24ee-4150-815d-1a1f57061275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\texture\character">
+      <UniqueIdentifier>{c0932343-a35d-4e91-b079-8c47ac74224b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件\texture\bullet">
+      <UniqueIdentifier>{34cef2e7-339a-4773-9a5e-a90aee802ed3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\win-sdl\SDL_FontCache\SDL_FontCache.c">
@@ -43,18 +55,6 @@
   <ItemGroup>
     <ClInclude Include="..\win-sdl\SDL_FontCache\SDL_FontCache.h">
       <Filter>Libraries\utilities\SDL_FontCache</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\game.hpp">
-      <Filter>Libraries\view</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\scene.hpp">
-      <Filter>Libraries\view</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\scoreboard.hpp">
-      <Filter>Libraries\view</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\title.hpp">
-      <Filter>Libraries\view</Filter>
     </ClInclude>
     <ClInclude Include="lib\object.hpp">
       <Filter>Libraries\object</Filter>
@@ -86,5 +86,37 @@
     <ClInclude Include="lib\player.hpp">
       <Filter>Libraries\object\character</Filter>
     </ClInclude>
+    <ClInclude Include="lib\game.hpp">
+      <Filter>Libraries\view\game</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\title.hpp">
+      <Filter>Libraries\view\title</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\scene.hpp">
+      <Filter>Libraries\view\game</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\scoreboard.hpp">
+      <Filter>Libraries\view\game</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\button.hpp">
+      <Filter>Libraries\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\pause.hpp">
+      <Filter>Libraries\view\game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\texture\character\default.png">
+      <Filter>资源文件\texture\character</Filter>
+    </Image>
+    <Image Include="assets\texture\character\redwarm.png">
+      <Filter>资源文件\texture\character</Filter>
+    </Image>
+    <Image Include="assets\texture\bullet\default.png">
+      <Filter>资源文件\texture\bullet</Filter>
+    </Image>
+    <Image Include="assets\texture\bullet\flame.png">
+      <Filter>资源文件\texture\bullet</Filter>
+    </Image>
   </ItemGroup>
 </Project>

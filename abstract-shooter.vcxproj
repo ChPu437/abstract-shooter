@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="..\win-sdl\SDL_FontCache\SDL_FontCache.h" />
     <ClInclude Include="lib\bullet.hpp" />
+    <ClInclude Include="lib\button.hpp" />
     <ClInclude Include="lib\character.hpp" />
     <ClInclude Include="lib\collision.hpp" />
     <ClInclude Include="lib\enemy.hpp" />
@@ -151,12 +152,19 @@
     <ClInclude Include="lib\fps_lim.hpp" />
     <ClInclude Include="lib\game.hpp" />
     <ClInclude Include="lib\object.hpp" />
+    <ClInclude Include="lib\pause.hpp" />
     <ClInclude Include="lib\player.hpp" />
     <ClInclude Include="lib\scene.hpp" />
     <ClInclude Include="lib\scoreboard.hpp" />
     <ClInclude Include="lib\texture.hpp" />
     <ClInclude Include="lib\timer.hpp" />
     <ClInclude Include="lib\title.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\texture\bullet\default.png" />
+    <Image Include="assets\texture\bullet\flame.png" />
+    <Image Include="assets\texture\character\default.png" />
+    <Image Include="assets\texture\character\redwarm.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

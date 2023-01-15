@@ -1,5 +1,6 @@
 #pragma once
 #include "character.hpp"
+#include "player.hpp"
 #include "bullet.hpp"
 
 constexpr int BOSS_POS_X = 360;
