@@ -151,6 +151,7 @@
     <ClInclude Include="lib\enums.hpp" />
     <ClInclude Include="lib\fps_lim.hpp" />
     <ClInclude Include="lib\game.hpp" />
+    <ClInclude Include="lib\hitbox.hpp" />
     <ClInclude Include="lib\object.hpp" />
     <ClInclude Include="lib\pause.hpp" />
     <ClInclude Include="lib\player.hpp" />

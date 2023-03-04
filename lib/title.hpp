@@ -1,7 +1,6 @@
 ﻿// TODO: 游戏主界面
 #pragma once
 #include <SDL.h>
-#include "game.hpp"
 #include "texture.hpp"
 #include "button.hpp"
 

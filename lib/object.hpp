@@ -21,8 +21,8 @@ public:
 	void setSpeedX(const int& x) { spdX = x; }
 	void setSpeedY(const int& x) { spdY = x; }
 	bool calcCollision(const Object& that) const {
-		int disSquare = pow((posX + col.x) - (that.getPosX() + that.col.x), 2);
-		disSquare += pow((posY + col.y) - (that.getPosY() + that.col.y), 2);
+		int disSquare = pow((posX + col.center.x) - (that.getPosX() + that.col.center.x), 2);
+		disSquare += pow((posY + col.center.y) - (that.getPosY() + that.col.center.y), 2);
 		return disSquare < pow(col.r + that.col.r, 2); 
 		// to prevent unset collision wrongly judge as a collision of zero length
 	}

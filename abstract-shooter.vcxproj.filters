@@ -104,6 +104,9 @@
     <ClInclude Include="lib\pause.hpp">
       <Filter>Libraries\view\game</Filter>
     </ClInclude>
+    <ClInclude Include="lib\hitbox.hpp">
+      <Filter>Libraries\object\character</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\texture\character\default.png">

@@ -1,6 +1,12 @@
 ﻿// 限制fps在60，或者用计时器控制游戏不会因帧率变化导致速度变化
 // 想法：更改公式计算每一帧每几帧对应的帧率，提高帧率计算的精确度，同时
 // 将帧率计数器和限制器合并提高运行效率
+
+/*
+新公式:
+fps = TickPassedPerFrame / 1000
+这样计算的是每一帧时的帧率而非平均帧率
+*/
 #pragma once
 #include <SDL.h>
 #include <SDL_FontCache.h>

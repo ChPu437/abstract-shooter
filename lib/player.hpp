@@ -1,6 +1,7 @@
 #pragma once
 #include "character.hpp"
 #include "bullet.hpp"
+#include "hitbox.hpp"
 
 using lBullet = std::list<Bullet*>;
 
@@ -18,9 +19,6 @@ public:
 		}
 		isSlow = false;
 		posX = pX, posY = pY;
-		hitbox.loadFromFile("assets/texture/character/hitbox.png", 96, 96);
-		angleHitbox = 0;
-		hbCenter = {48, 48};
 	}
 	void toggleSlow() { 
 		isSlow = !isSlow;
@@ -56,18 +54,12 @@ public:
 				cntAttack = 0;
 			}
 		}
-		if (isSlow) {
-			angleHitbox = angleHitbox == 359 ? 0 : angleHitbox + 1;
-		}
+		hitbox.update(isSlow);
 	}
 	void render() {
 		texture.render(posX, posY);
-		if (isSlow)
-			hitbox.render(posX - 30, posY - 30, nullptr, angleHitbox, &hbCenter);
+		hitbox.render(posX, posY);
 	}
-	int getSpeed() const { return speed; }
-	int getPower() const { return power; }
-	BulletType getBulletType() const { return bType; }
 	void destory() {
 		// Do this when particle engine is ready
 	}
@@ -75,9 +67,8 @@ private:
 	int speed;
 	BulletType bType;
 	int power;
-	Texture hitbox;
-	int angleHitbox;
-	SDL_Point hbCenter;
 	int cntAttack;
+	Hitbox hitbox;
 	bool isSlow;
 };
+

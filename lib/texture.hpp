@@ -15,6 +15,9 @@ public:
 	void free();
 	bool loadFromFile(const std::string&, const int& = 0, const int& = 0);
 	void render(const int&, const int&, const SDL_Rect* = nullptr, const double& = 0.0, const SDL_Point* = nullptr, const SDL_RendererFlip& = SDL_FLIP_NONE);
+	void setAlpha(const Uint8& alpha) {
+		SDL_SetTextureAlphaMod(texture, alpha);
+	}
 	int getWidth() const;
 	int getHeight() const;
 protected:

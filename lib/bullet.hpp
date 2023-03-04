@@ -25,7 +25,7 @@ namespace bullet {
 			posX = pX, posY = pY;
 			texture.loadFromFile("assets/texture/bullet/default.png", 9, 18);
 			spdX = 0, spdY = -10;
-			col = { 4.5, 4.5, 4.5 };
+			col = { 4, 4, 4 };
 			this->damage = damage;
 		};
 		void update(const Object* target = nullptr) {
@@ -37,7 +37,7 @@ namespace bullet {
 		Flame(const int& pX, const int& pY) {
 			type = BTYPE_FLAME, rela = BREL_HOSTILE;
 			texture.loadFromFile("assets/texture/bullet/flame.png", 18, 18);
-			col = { 9, 13.5, 4.5 };
+			col = { 9, 13, 4 };
 			posX = pX, posY = pY;
 			slope = 0.0; // 斜率的**倒数**
 			flag = true;

@@ -1,5 +1,9 @@
 #pragma once
+#include <SDL.h>
+
 struct Collision {
-	double x, y, r;
+	SDL_Point center;
+	int r; 
 	// center and radius, as relative to object position
 };
+

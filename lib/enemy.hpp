@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "character.hpp"
 #include "player.hpp"
 #include "bullet.hpp"
@@ -17,7 +17,8 @@ public:
 protected:
 	int health;
 };
-// bossµÄ¸üĞÂº¯ÊıÖ±½ÓĞ´µ½bossÀàÖĞ£¬¶øÆÕÍ¨¹ÖµÄ¸üĞÂ²ÉÓÃº¯ÊıÖ¸Õë·½±ã¸´ÓÃ
+// bossçš„æ›´æ–°å‡½æ•°ç›´æ¥å†™åˆ°bossç±»ä¸­~~ï¼Œè€Œæ™®é€šæ€ªçš„æ›´æ–°é‡‡ç”¨å‡½æ•°æŒ‡é’ˆæ–¹ä¾¿å¤ç”¨~~
+// ç°åœ¨å·²ç»æ²¡æœ‰æ™®é€šæ€ªäº†ï¼ˆ
 namespace enemy {
 	class Boss : public Enemy {
 	public:
@@ -68,7 +69,7 @@ namespace enemy {
 					}
 					break;
 				}
-				if(cntX % 5 == 0)
+				if(cntX % 6 == 0)
 					blt.push_back(new bullet::Flame(posX + 24, posY + 30));
 			}
 		private:

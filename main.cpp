@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
 		SDL_SetRenderDrawColor(gRenderer, 255, 255, 255, 255);
 		SDL_RenderClear(gRenderer);
 
-		fpsTimer.render();
+		fpsTimer.update();
 
 		switch (game != nullptr) {
 		case true:
@@ -91,10 +91,10 @@ int main(int argc, char* argv[]) {
 			title->render();
 			break;
 		}
+		fpsTimer.render();
 
 		SDL_RenderPresent(gRenderer);
 
-		fpsTimer.update();
 		fpsCapper.cap();
 	}
 
