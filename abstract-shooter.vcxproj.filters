@@ -45,6 +45,9 @@
     <Filter Include="资源文件\texture\bullet">
       <UniqueIdentifier>{34cef2e7-339a-4773-9a5e-a90aee802ed3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Libraries\view\game\scene">
+      <UniqueIdentifier>{79dfde60-2478-4d34-9f32-cb59bc54256c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\win-sdl\SDL_FontCache\SDL_FontCache.c">
@@ -92,9 +95,6 @@
     <ClInclude Include="lib\title.hpp">
       <Filter>Libraries\view\title</Filter>
     </ClInclude>
-    <ClInclude Include="lib\scene.hpp">
-      <Filter>Libraries\view\game</Filter>
-    </ClInclude>
     <ClInclude Include="lib\scoreboard.hpp">
       <Filter>Libraries\view\game</Filter>
     </ClInclude>
@@ -106,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="lib\hitbox.hpp">
       <Filter>Libraries\object\character</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\scene.hpp">
+      <Filter>Libraries\view\game\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="bossHPBar.hpp">
+      <Filter>Libraries\view\game\scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

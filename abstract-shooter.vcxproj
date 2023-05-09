@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\win-sdl\SDL_FontCache\SDL_FontCache.h" />
+    <ClInclude Include="bossHPBar.hpp" />
     <ClInclude Include="lib\bullet.hpp" />
     <ClInclude Include="lib\button.hpp" />
     <ClInclude Include="lib\character.hpp" />

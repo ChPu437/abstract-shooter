@@ -20,9 +20,9 @@ protected:
 namespace bullet {
 	class Default : public Bullet {
 	public:
-		Default(const int& damage, const int& pX, const int& pY) {
+		Default(const int& damage, const int& _posX, const int& _posY) {
 			type = BTYPE_NORMAL, rela = BREL_FRIENDLY;
-			posX = pX, posY = pY;
+			posX = _posX, posY = _posY;
 			texture.loadFromFile("assets/texture/bullet/default.png", 9, 18);
 			spdX = 0, spdY = -10;
 			col = { 4, 4, 4 };
@@ -34,11 +34,11 @@ namespace bullet {
 	};
 	class Flame : public Bullet {
 	public:
-		Flame(const int& pX, const int& pY) {
+		Flame(const int& _posX, const int& _posY) {
 			type = BTYPE_FLAME, rela = BREL_HOSTILE;
 			texture.loadFromFile("assets/texture/bullet/flame.png", 18, 18);
 			col = { 9, 13, 4 };
-			posX = pX, posY = pY;
+			posX = _posX, posY = _posY;
 			slope = 0.0; // 斜率的**倒数**
 			flag = true;
 		}

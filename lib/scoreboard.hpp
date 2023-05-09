@@ -7,8 +7,8 @@
 
 class Scoreboard {
 public:
-	Scoreboard(const int& a, const int& b, const int& c, const unsigned long long& d)
-		: pLife(a), pBomb(b), pGraze(c), pScore(d) {
+	Scoreboard(const int& _pLife, const int& _pBomb, const int& _pGraze, const unsigned long long& _pScore)
+		: pLife(_pLife), pBomb(_pBomb), pGraze(_pGraze), pScore(_pScore) {
 		font = FC_CreateFont(); // 大小不一样复用空间不大~~ TODO: font复用~~
 		FC_LoadFont(font, gRenderer, "assets/font/jetbrains_mono.ttf", 30, SDL_Color{0, 0, 0, 255}, TTF_STYLE_BOLD);
 		if (font == nullptr) throw;

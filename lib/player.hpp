@@ -7,7 +7,8 @@ using lBullet = std::list<Bullet*>;
 
 class Player : public Character {
 public:
-	Player(const PlayerType& type, const int& pX, const int& pY) {
+	Player(const PlayerType& type, const int& _posX, const int& _posY) {
+		//  这一部分改为虚构造直接在派生类里构造
 		switch (type) {
 		case PTYPE_DEFAULT:
 			texture.loadFromFile("assets/texture/character/default.png", 36, 36);
@@ -18,7 +19,7 @@ public:
 			break;
 		}
 		isSlow = false;
-		posX = pX, posY = pY;
+		posX = _posX, posY = _posY;
 	}
 	void toggleSlow() { 
 		isSlow = !isSlow;
@@ -47,13 +48,18 @@ public:
 	}
 	void update(lBullet& blt) {
 		posX += spdX, posY += spdY; 
+
+		// This should be updated by calling different attack-update function of different derived classes.
+		attackUpdate();
+		/*
 		if (~cntAttack) {
 			cntAttack++;
 			if (cntAttack == 5) {
 				blt.push_back(new bullet::Default(power / 10, posX + 13, posY - 20));
 				cntAttack = 0;
 			}
-		}
+		}*/
+
 		hitbox.update(isSlow);
 	}
 	void render() {
@@ -70,5 +76,6 @@ private:
 	int cntAttack;
 	Hitbox hitbox;
 	bool isSlow;
+	void* attackUpdate();
 };
 

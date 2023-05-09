@@ -13,6 +13,7 @@
 #include "player.hpp"
 #include "bullet.hpp"
 #include "enums.hpp"
+#include "bossHPbar.hpp"
 
 using ull = unsigned long long;
 
@@ -52,8 +53,8 @@ int Scene::timerPBullet = 0;
 const SDL_Rect Scene::border = { 65, 25, 770, 905 };
 const SDL_Rect Scene::gameView = { 66, 26, 768, 903 };
 
-Scene::Scene(int& a, int& b, int& c, ull& d)
-	: pLife(a), pBomb(b), pGraze(c), pScore(d) {
+Scene::Scene(int& _pLife, int& _pBomb, int& _pGraze, ull& _pScore)
+	: pLife(_pLife), pBomb(_pBomb), pGraze(_pGraze), pScore(_pScore) {
 	player = new Player(PTYPE_DEFAULT, (gameView.w - 36) / 2, gameView.h - 150);
 	timerPBullet = 0;
 	isPShooting = false;

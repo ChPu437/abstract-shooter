@@ -3,6 +3,8 @@
 #include "player.hpp"
 #include "bullet.hpp"
 
+extern class BossHPBar;
+
 constexpr int BOSS_POS_X = 360;
 constexpr int BOSS_POS_Y = 150;
 
@@ -21,6 +23,7 @@ protected:
 // 现在已经没有普通怪了（
 namespace enemy {
 	class Boss : public Enemy {
+	friend class BossHPBar;
 	public:
 		void destory(){}
 	};

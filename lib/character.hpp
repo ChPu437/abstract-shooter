@@ -1,5 +1,5 @@
 ﻿// 自机、敌机等角色
-// TODO: 如何设计敌机的射击方案等？
+// for various player/enemy, create directories to store the derived classes
 #pragma once
 #include <string>
 #include "object.hpp" 

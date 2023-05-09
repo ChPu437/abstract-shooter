@@ -8,9 +8,9 @@ public:
 		angle = alpha = 0;
 		col = { 48, 48, 20 };
 	}
-	void render(const int& posX, const int& posY) {
+	void render(const int& _posX, const int& _posY) {
 		if (!alpha) return;
-		texture.render(posX - 30, posY - 30, NULL, angle, &col.center);
+		texture.render(_posX - 30, _posY - 30, NULL, angle, &col.center);
 	}
 	void update(const bool& show) {
 		alpha += show ? +20 : -20;

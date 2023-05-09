@@ -15,6 +15,7 @@ public:
 		pGraze = 0;
 		pScore = 0;
 		keyUp = keyDown = keyLeft = keyRight = false;
+		// We treat these status indicating variable as local "global variable"
 		scene = new Scene(pLife, pBomb, pGraze, pScore);
 		scoreboard = new Scoreboard(pLife, pBomb, pGraze, pScore);
 		background.loadFromFile("assets/texture/game/background.png", WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -28,6 +29,8 @@ public:
 		}
 	}
 	void handleEvent(const SDL_Event& e) {
+		// User input handle here, and scene only draws&updates
+		// our given status
 		if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
 			switch (e.key.keysym.sym) {
 			case SDLK_UP:
@@ -90,6 +93,7 @@ public:
 	void update() {
 		if (pLife <= 0) {
 			// Do sth about failed
+			return;
 		};
 		scene->update();
 		scoreboard->update();
